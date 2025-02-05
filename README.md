@@ -28,13 +28,13 @@ Ensure you have the following installed:
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/StergiosF/Car-comparison.git
+   git clone https://github.com/StergiosF/CarCompare
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd Car-comparison
+   cd CarCompare
    ```
 
 3. Install NPM packages:
