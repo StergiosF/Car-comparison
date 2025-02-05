@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #dee2e6;
+}
+
+.app {
+  height: 100vh;
+  background-color: #192329;
+  overflow: hidden;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 9vh;
+  background-color: #202a31;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 15px 35px;
+}
+
+.logo {
+  position: absolute;
+  left: 6rem;
+  height: 5.6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.search {
+  display: flex;
+  gap: 4rem;
+  position: relative;
+  height: 5rem;
+}
+
+.add-car-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.add-car-btn {
+  cursor: pointer;
+  padding: 1.2rem 1rem;
+  width: 16rem;
+  font-size: 1.6rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #16191f;
+  color: #dee2e6;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.4rem;
+  user-select: none;
+}
+
+.add-car-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+  background-color: #000;
+}
+
+.add-car-btn:active {
+  box-shadow: none;
+}
+
+.toggle-car-btn {
+  cursor: pointer;
+  height: 2.6rem;
+  width: 2.6rem;
+  font-size: 2.4rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 50%;
+  color: #dee2e6;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.open-form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.fade-in.mounted {
+  opacity: 1;
+}
+
+.open-form input[type="text"],
+.open-form select {
+  background-color: #16191f;
+  color: #dee2e6;
+  padding: 1rem;
+  width: 16rem;
+  height: 100%;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.open-form input[type="text"]:focus {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+  background-color: #000;
+}
+
+.open-form select:hover {
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+  background-color: #000;
+}
+
+.open-form select {
+  cursor: pointer;
+  width: 20rem;
+  position: relative;
+}
+
+.open-form input[type="text"]::placeholder {
+  color: #7a8187;
+}
+
+.open-form select option {
+  background-color: #000;
+  color: #dee2e6;
+}
+
+.compare-btn {
+  position: absolute;
+  right: -20rem;
+  height: 100%;
+  cursor: pointer;
+  padding: 1.2rem 2.6rem;
+  font-size: 1.6rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #16191f;
+  color: #dee2e6;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compare-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+  background-color: #000;
+}
+
+.compare-btn:active {
+  box-shadow: none;
+}
+
+.reset-btn {
+  height: 100%;
+  cursor: pointer;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(145, 26, 26);
+  color: #dee2e6;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+  background-color: rgb(124, 18, 18);
+}
+
+.reset-btn:active {
+  box-shadow: none;
+}
+
+/* MAIN  */
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 91vh;
+  position: relative;
+}
+
+.main:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  opacity: 35%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/public/background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: 1;
+}
+
+.cars-container {
+  background: rgba(166, 166, 166, 0.502);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.1px);
+  -webkit-backdrop-filter: blur(8.1px);
+
+  width: 80%;
+  height: 90%;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 2;
+}
+
+.left-panel {
+  border-right: 12px solid #16191f33;
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.left-panel .ad-banner {
+  border-right: 3px solid #16191f33;
+}
+
+.right-panel {
+  border-left: 12px solid #16191f33;
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.logo-big {
+  width: 30%;
+}
+
+.car-card {
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+}
+
+.not-found-msg {
+  width: 100%;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.car-specs-title {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car-specs-title span {
+  width: 100%;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-size: 1.6rem;
+  background-color: rgba(166, 166, 166, 0.3);
+}
+
+.left-panel .car-specs-title span:first-child {
+  border-top-left-radius: 16px;
+}
+
+.left-panel .car-specs-title span:last-child {
+  border-bottom-left-radius: 16px;
+}
+
+.right-panel .car-specs span:first-child {
+  border-top-right-radius: 16px;
+}
+
+.right-panel .car-specs span:last-child {
+  border-bottom-right-radius: 16px;
+}
+
+.car-specs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.car-specs span {
+  width: 100%;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-size: 1.6rem;
+  background-color: rgba(166, 166, 166, 0.3);
+}
